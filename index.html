@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Fórmula Resolvente</title>
+</head>
+
+<body>
+
+    <h2>Fórmula Resolvente</h2>
+
+    <button onclick="calcular()">Novo cálculo</button>
+
+    <script>
+        function calcular() {
+            let a;
+
+            // Impedir que a seja igual a zero
+            do {
+                a = Number(prompt("Valor de a:"));
+            } while (a === 0);
+
+            let b = Number(prompt("Valor de b:"));
+            let c = Number(prompt("Valor de c:"));
+
+            let delta = b * b - 4 * a * c;
+
+            if (delta >= 0) {
+                let x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                let x2 = (-b - Math.sqrt(delta)) / (2 * a);
+
+                // Arredondar para 2 casas decimais
+                x1 = x1.toFixed(2);
+                x2 = x2.toFixed(2);
+
+                alert("x1 = " + x1 + " e x2 = " + x2);
+            } else {
+                alert("Não existem raízes reais.");
+            }
+        }
+
+        // Permitir vários cálculos
+        calcular();
+    </script>
+
+</body>
+</html>
